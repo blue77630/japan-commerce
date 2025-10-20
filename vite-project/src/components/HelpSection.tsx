@@ -5,7 +5,7 @@ export default function HelpSection() {
   return (
     <button className="help-section" onClick={() => navigate('/help')} style={{cursor: "pointer"}}>
       <span className="help-icon">?</span>
-      <span className="help-text">Help</span>
+      <span className="help-text">Support</span>
     </button>
   );
 }

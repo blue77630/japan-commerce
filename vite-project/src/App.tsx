@@ -1,4 +1,5 @@
 import './App.css'
+import './media.css';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/Home'
 import React, { useEffect, useState } from 'react';
@@ -9,6 +10,17 @@ import AnimeLoader from './components/AnimeLoader';
 import HelpSection from './components/HelpSection';
 import Arrow from './components/Arrow';
 import CarouselCards from './components/CarouselCards';
+
+{/* Les imports des pages d'aide */}
+
+import CancelOrder from './components/HelpSectionPages/cancel-order';
+import CreateAccount from './components/HelpSectionPages/create-account';
+import ContactSupport from './components/HelpSectionPages/contact-support';
+import PaymentMethods from './components/HelpSectionPages/payment-methods';
+import AddOrder from './components/HelpSectionPages/add-order';
+import TrackOrder from './components/HelpSectionPages/track-order';
+
+{/* FIN */}
 
 function Join() {
   return (
@@ -35,7 +47,7 @@ function Join() {
           }}
         >
           ようこそ !
-          <span className="dream-message">Bienvenue&nbsp;!</span>
+          <span className="dream-message">Welcome&nbsp;!</span>
         </h2>
         <h1
           style={{
@@ -67,6 +79,14 @@ function App(){
       <AnimeLoader />
       <Router>
          <Routes>
+          {/* Les pages d'aide */}
+            <Route path="/helpsectionpages/create-account" element= {< CreateAccount />}></Route>
+            <Route path="/helpsectionpages/cancel-order" element = {< CancelOrder />}></Route>
+            <Route path="/helpsectionpages/contact-support" element = {< ContactSupport />}></Route>
+            <Route path="/helpsectionpages/payment-methods" element = {< PaymentMethods />}></Route>
+            <Route path="/helpsectionpages/add-order" element = {< AddOrder />}></Route>
+            <Route path="/helpsectionpages/track-order" element = {< TrackOrder />}></Route>
+          {/* Fin des pages d'aide */}
             <Route path="/" element = {<Join />}></Route>
             <Route path="/home" element = {<Home />}></Route>
             <Route path="/inscription" element = {<Inscription />}></Route>

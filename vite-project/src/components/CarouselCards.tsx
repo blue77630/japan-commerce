@@ -5,23 +5,23 @@ import JoinCardButton from "./JoinCardButton";
 const cards = [
   {
     key: "inscription",
-    title: "Inscription",
-    description: "Crée ton compte et rejoins l’aventure !",
+    title: "Register",
+    description: "Create your account and join the adventure!",
     badge: "Nouveau",
     icon: "/inscription.png",
   },
   {
     key: "join",
-    title: "Rejoindre",
-    description: "Explorez le Japon en ligne",
+    title: "Login",
+    description: "Explore Japan online",
     badge: "Japan",
     icon: "./poisson.webp",
   },
   {
     key: "connexion",
-    title: "Connexion",
-    description: "Connecte-toi pour accéder à ton espace.",
-    badge: "Déjà membre",
+    title: "Login",
+    description: "Connect to access your space.",
+    badge: "Already a member",
     icon: "/connexion.png",
   },
 ];
