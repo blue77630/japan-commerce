@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Arrow({ direction, onClick }: { direction: "left" | "right"; onClick?: () => void }) {
   return (
     <button
