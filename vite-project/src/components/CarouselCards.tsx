@@ -51,7 +51,7 @@ export default function CarouselCards() {
   return (
     <div className="carousel-cards-stack">
       <button
-        className="carousel-arrow carousel-arrow--left"
+        className="carousel-arrow carousel-arrow--left loading-button"
         tabIndex={0}
         onClick={() => handleSwipe("left")}
         disabled={activeIdx === 0 || animDir !== ""}
@@ -171,7 +171,7 @@ export default function CarouselCards() {
         </div>
       )}
       <button
-        className="carousel-arrow carousel-arrow--right"
+        className="carousel-arrow carousel-arrow--right loading-button"
         tabIndex={0}
         onClick={() => handleSwipe("right")}
         disabled={activeIdx === cards.length - 1 || animDir !== ""}
