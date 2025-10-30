@@ -2,7 +2,7 @@ import './App.css'
 import './media.css';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/Home'
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Inscription from './pages/Inscription';
 import Connexion from './pages/Connexion';
 import Help from './pages/Help';
@@ -24,7 +24,7 @@ import TrackOrder from './components/HelpSectionPages/track-order';
 
 function Join() {
   return (
-    <div className="japan-bg">
+    <div className="japan-bg page-animate-in-loading">
       <HelpSection />
       <div className="join-card">
         <h2

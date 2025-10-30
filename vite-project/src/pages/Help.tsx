@@ -1,10 +1,13 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function Help(){
   const navigate = useNavigate();
   return (
     <body className="bg-purple page-animate-in">
+
+            <button className="back-btn-help" onClick={() => navigate(-1)}>
+                ← Back
+            </button>
 
         <div className="help-image-background">
           <h2>How can we help you?</h2>
@@ -14,7 +17,7 @@ function Help(){
           <div className="imagecontainer">
             <div className="paddingButton imagesButton">
               <button
-                className="help-rect-btn help-btn"
+                className="help-rect-btn help-btn help-button"
                 onClick={() => navigate('/HelpSectionPages/create-account')}
               >
                 <img src="./public/account2.webp" alt="" className="help-btn-img" />
@@ -26,7 +29,7 @@ function Help(){
             </div>
             <div className="paddingButton imagesButton">
               <button
-                className="help-rect-btn help-btn"
+                className="help-rect-btn help-btn help-button"
                 onClick={() => navigate('/HelpSectionPages/add-order')}
               >
                 <img src="./public/order.png" alt="" className="help-btn-img" />
@@ -40,7 +43,7 @@ function Help(){
 
           <div className="imagecontainer">
               <div className="paddingButton">
-                <button className="help-rect-btn help-btn" onClick={() => navigate('/HelpSectionPages/track-order')}>
+                <button className="help-rect-btn help-btn help-button" onClick={() => navigate('/HelpSectionPages/track-order')}>
                   <img src="./public/TrackOrder.png" alt="" className="help-btn-img" />
                   <div className="help-btn-desc">
                     <span className="help-btn-title">How to track my order?</span>
@@ -49,7 +52,7 @@ function Help(){
                 </button>
               </div>
               <div className="paddingButton">
-                <button className="help-rect-btn help-btn" onClick={() => navigate('/HelpSectionPages/cancel-order')}>
+                <button className="help-rect-btn help-btn help-button" onClick={() => navigate('/HelpSectionPages/cancel-order')}>
                   <img src="./public/CancelOrder.png" alt="" className="help-btn-img" />
                   <div className="help-btn-desc">
                     <span className="help-btn-title">How to cancel my order?</span>
@@ -61,7 +64,7 @@ function Help(){
 
           <div className="imagecontainer">
               <div className="paddingButton">
-                <button className="help-rect-btn help-btn" onClick={() => navigate('/HelpSectionPages/contact-support')}>
+                <button className="help-rect-btn help-btn help-button" onClick={() => navigate('/HelpSectionPages/contact-support')}>
                   <img src="./public/Contact-Support.png" alt="" className="help-btn-img" />
                   <div className="help-btn-desc">
                     <span className="help-btn-title">How to contact support?</span>
@@ -70,7 +73,7 @@ function Help(){
                 </button>
               </div>
               <div className="paddingButton">
-                <button className="help-rect-btn help-btn" onClick={() => navigate('/HelpSectionPages/payment-methods')}>
+                <button className="help-rect-btn help-btn help-button" onClick={() => navigate('/HelpSectionPages/payment-methods')}>
                   <img src="./public/Payment-Method-Free-Download-PNG.png" alt="" className="help-btn-img" />
                   <div className="help-btn-desc">
                     <span className="help-btn-title">What payment methods are accepted?</span>
