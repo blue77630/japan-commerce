@@ -16,6 +16,6 @@ export default function AddOrder() {
             <p style={{ maxWidth: 400, textAlign: "center" }}>
                 To add an order, go to the products page, select the items you want, and click "Add to cart". Then, proceed to checkout and confirm your order.
             </p>
-        </div>
+        </div> 
     )
 }

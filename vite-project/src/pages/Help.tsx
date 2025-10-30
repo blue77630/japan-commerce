@@ -5,9 +5,9 @@ function Help(){
   return (
     <body className="bg-purple page-animate-in">
 
-            <button className="back-btn-help" onClick={() => navigate(-1)}>
-                ← Back
-            </button>
+    <button className="back-btn-help" onClick={() => navigate('/')}>
+      ← Back
+    </button>
 
         <div className="help-image-background">
           <h2>How can we help you?</h2>
