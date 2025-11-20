@@ -1,6 +1,6 @@
 import './App.css'
 import './media.css';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home'
 import { useEffect, useState } from 'react';
 import Inscription from './pages/Inscription';
@@ -10,6 +10,7 @@ import AnimeLoader from './components/AnimeLoader';
 import HelpSection from './components/HelpSection';
 import Arrow from './components/Arrow';
 import CarouselCards from './components/CarouselCards';
+import Navbar from './components/Navbar';
 
 {/* Les imports des pages d'aide */}
 
@@ -73,25 +74,39 @@ function Join() {
   )
 }
 
+function RemoveNavbar() {
+  const location = useLocation();
+  const path = location.pathname.toLowerCase();
+  if (path === '/' || path === '/help' || path.startsWith('/helpsectionpages')) {
+    return null;
+  }
+  return <Navbar />;
+}
+
 function App(){
   return (
     <>
       <AnimeLoader />
       <Router>
-         <Routes>
-          {/* Les pages d'aide */}
+        <Routes>
+          <Route path="/" element = {<Join />}></Route>
+          <Route path="/help" element={<Help />}></Route>
+            {/* Les pages d'aide */}
             <Route path="/helpsectionpages/create-account" element= {< CreateAccount />}></Route>
             <Route path="/helpsectionpages/cancel-order" element = {< CancelOrder />}></Route>
             <Route path="/helpsectionpages/contact-support" element = {< ContactSupport />}></Route>
             <Route path="/helpsectionpages/payment-methods" element = {< PaymentMethods />}></Route>
             <Route path="/helpsectionpages/add-order" element = {< AddOrder />}></Route>
             <Route path="/helpsectionpages/track-order" element = {< TrackOrder />}></Route>
+        </Routes>
+
+        <RemoveNavbar/>
+
+         <Routes>
           {/* Fin des pages d'aide */}
-            <Route path="/" element = {<Join />}></Route>
             <Route path="/home" element = {<Home />}></Route>
             <Route path="/inscription" element = {<Inscription />}></Route>
             <Route path="/connexion" element = {<Connexion />}></Route>
-            <Route path="/help" element={<Help />}></Route>
          </Routes>
       </Router>
     </>
