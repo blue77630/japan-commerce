@@ -3,6 +3,11 @@ export default function Inscription() {
     const [form, setForm] = useState({ name: "", email: "", password: "", confirm: "" });
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
+
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+
     return (
         <div className="page-bg page-animate-in">
             <h1>Inscription</h1>
