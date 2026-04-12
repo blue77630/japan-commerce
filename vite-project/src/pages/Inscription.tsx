@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function Inscription() {
     const navigate = useNavigate();
     const [form, setForm] = useState({ name: "", email: "", password: "", confirm: "" });
@@ -6,6 +9,29 @@ export default function Inscription() {
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+
+    async function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        setError(null);
+        setLoading(true);
+        try {
+            const base = (import.meta.env.VITE_API_URL as string) || "";
+            const res = await fetch(`${base}/api/register`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: form.name, email: form.email, password: form.password })
+            });
+            const text = await res.text();
+            if (!res.ok) {
+                let msg = "Échec de l'inscription.";
+                try { const data = JSON.parse(text); if (data?.message) msg = data.message; } catch { if (text) msg = text; }
+                throw new Error(msg);
+            }
+            navigate("/connexion");
+        } catch (err: any) {
+            setError(err.message || "Erreur réseau.");
+        } finally { setLoading(false); }
     }
 
     return (
@@ -40,5 +66,5 @@ export default function Inscription() {
                 </div>
             </form>
         </div>
-    )
+    );
 }
